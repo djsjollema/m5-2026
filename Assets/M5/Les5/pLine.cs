@@ -9,7 +9,14 @@ public class pLine : MonoBehaviour
     public Vector3 directionVector = new Vector3(1, 2, 0);
     public float parameter;
 
-    // Update is called once per frame
+    public Color lineColor = Color.white;
+
+   void Start()
+    {
+        lineRenderer.startColor = lineColor;
+        lineRenderer.endColor = lineColor;
+    }
+
     void Update()
     {
         directionVector.Normalize();
@@ -40,6 +47,12 @@ public class pLine : MonoBehaviour
         Vector3 intersectionPoint = supportVector + t1 * directionVector;
 
         return intersectionPoint;
+    }
+
+    public void SetColor(Color color)
+    {
+        lineRenderer.startColor = color;
+        //lineRenderer.endColor = color;
     }
 
 

@@ -13,8 +13,8 @@ public class GVector : MonoBehaviour
 
     void Update()
     {
-        lr.SetPosition(1, new Vector3(vector.magnitude, 0, 0));
-        head.localPosition = new Vector3(vector.magnitude, 0, 0);
+        lr.SetPosition(1, new Vector3(vector.magnitude - 0.2f, 0, 0));
+        head.localPosition = new Vector3(vector.magnitude-0.2f, 0, 0);
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(vector.y, vector.x) * Mathf.Rad2Deg);
     }
 }
